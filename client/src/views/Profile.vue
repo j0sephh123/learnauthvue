@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Profile of {{currentUserGetter.user}}</h1>
+    <h1 v-if="currentUserGetter !== null">Profile of {{currentUserGetter.user}}</h1>
+    <h1 v-else>Profile of nobody</h1>
   </div>
 </template>
 

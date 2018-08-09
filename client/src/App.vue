@@ -10,7 +10,7 @@
     <div id="nav" v-else>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> | 
-      <router-link :to="{path: 'profile/' + currentUser.id}">{{currentUser.user}}</router-link> |  
+      <router-link :to="{path: '/profile/' + currentUser.id}">{{currentUser.user}}</router-link> |  
       <button @click="logoutMethod">Logout</button>
     </div>
     <router-view/>
@@ -33,6 +33,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$route.path);
     let token;
     // if currentUser is null, check localstorage for token
     let {currentUser} = this.$store.state;
